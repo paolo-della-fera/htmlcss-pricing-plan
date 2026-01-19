@@ -6,20 +6,26 @@
 
 body {
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 
 .container {
-    max-width: 80%;
+    width: 100%;
+    max-width: 1240px;
     margin: 0 auto;
-    padding-top: 50px;
+    padding: 50px 20px;
 }
+
+
 
 /* #region header */
 
 .header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
 
     h1 {
         font-size: 50px;
@@ -30,19 +36,25 @@ body {
         font-size: 14px;
         color: gray;
     }
+
+    .header>div:first-child {
+        flex-grow: 1;
+        min-width: 600px;
+    }
 }
 
 
+/* switch monthly-yearly */
 .toggle {
     font-size: large;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto;
 
     span {
         color: gray;
     }
-
-    
 }
 
 .toggle i {
@@ -56,3 +68,124 @@ body {
 
 
 /* #endregion header */
+
+
+/* #region cards */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+/* singola card */
+.card {
+    flex-grow: 1;
+    min-width: 320px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* card centrale evidenziata */
+.card.main {
+    background: #5b17ff;
+    color: white;
+}
+
+/* titoli */
+.card h2 {
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.small {
+    font-size: 14px;
+    color: gray;
+}
+
+.card.main .small {
+    color: #ddd;
+}
+
+
+/* prezzo */
+.price {
+    margin: 25px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    justify-content: center;
+}
+
+.price strong {
+    font-size: 60px;
+    line-height: 1;
+}
+
+.price span {
+    font-size: 16px;
+    color: black;
+}
+
+.card.main .price span {
+    color: #eee;
+}
+
+
+/* bottone */
+.card button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background-color: #6500ff;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.card.main button {
+    background-color: white;
+    color: #5b17ff;
+}
+
+
+/* lista */
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    margin-bottom: 14px;
+}
+
+
+/* riquadro grigio */
+.yearly {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.badge {
+    background-color: lightgray;
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+
+
+/* card viola riquadro */
+.card.main .badge {
+    background: #fff;
+    color: #6500ff;
+}
+
+
+/* #endregion cards */
